@@ -90,7 +90,7 @@ def main():
     weather = options["weather"] if options["weather"] else 1
 
     gs.mapcalc(
-        f"{infestation_range} = {natural_distance} * sqrt({options['infected']} * {weather} * {reproductive_rate} * 52 - 1)",
+        f"{infestation_range} = {natural_distance} * sqrt({options['infected']} * {weather} * {weather} * {reproductive_rate} * 52 - 1)",
         quiet=True,
     )
     max_distance = gs.raster_info(infestation_range)["max"]
